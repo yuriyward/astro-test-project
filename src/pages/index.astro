@@ -1,16 +1,48 @@
 ---
+const profilePicture = "https://i.imgur.com/JPGFE75.jpg";
 
+import Cards from "../components/Cards.astro";
+import Main from "../layouts/Main.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Main title="Frau Katarina">
+  <div class="profile">
+    <img
+      src={profilePicture}
+      class="profile__picture"
+      alt="Frau Katerina's headshot."
+      width="100px"
+      height="100px"
+    />
+    <div class="profile__details">
+      <h1>Frau Katerina</h1>
+      <h2>VP of Engineering at Goooogle</h2>
+      <p>
+        Helping developers be excellent and succeed at building scalable
+        products
+      </p>
+    </div>
+  </div>
+  <Cards
+    cards={[
+      {
+        title: "Here are my guiding philosophies for life",
+        gradientFrom: "#818cf8",
+        gradientTo: "#d8b4fe",
+        to: "/philosophies",
+      },
+      {
+        title: "A summary of my work history",
+        gradientFrom: "#fde68a",
+        gradientTo: "#fca5a5",
+        to: "/work-summary",
+      },
+      {
+        title: "What I do beyond technology",
+        gradientFrom: "#6ee7b7",
+        gradientTo: "#9333ea",
+        to: "/beyond-tech",
+      },
+    ]}
+  />
+</Main>
